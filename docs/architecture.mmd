@@ -1,0 +1,7 @@
+flowchart LR
+  A[Gazebo Harmonic world] --> B[GPU lidar /scan]
+  B --> C[ROS 2 reactive controller]
+  C -->|/cmd_vel| D[Differential-drive interface]
+  D --> E[Wheel motion / odometry]
+  E --> A
+  F[ScoutNav firmware] -. future hardware adapter .-> C
